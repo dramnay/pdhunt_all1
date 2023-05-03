@@ -2,10 +2,24 @@
 GET http://localhost:3001/
 ###
 
-POST http://localhost:3001/
+GET http://localhost:3001/api/products
+
 
 ###
 
 
 GET http://localhost:3001/api/v1/notes
+
+###
+
+POST http://localhost:3001/api/user
+content-type: application/json
+
+{
+    "name": "John",
+    "email":"test1@gmail.com",
+    "password": "123456"
+
+}
+
 
