@@ -14,6 +14,13 @@ const userSchema = new mongoose.Schema({
     trim: true,
     required: true,
   },
+  email: {
+    type: String,
+    trim: true,
+    maxlength: 200,
+    required: true,
+    unique: true,
+  },
 });
 
 module.exports = mongoose.model("User", userSchema);
