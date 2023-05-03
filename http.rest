@@ -1,0 +1,11 @@
+
+GET http://localhost:3001/
+###
+
+POST http://localhost:3001/
+
+###
+
+
+GET http://localhost:3001/api/v1/notes
+
