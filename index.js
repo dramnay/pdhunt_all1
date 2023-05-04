@@ -4,6 +4,7 @@ const DBUtils = require("./utils/dbutils");
 const userService = require("./service/user_service");
 const User = require("./model/user");
 const userRouter = require("./routes/user_route");
+const authRouter = require("./routes/auth_route");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -15,6 +16,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use("/api/user", userRouter);
+app.use("/api/auth", authRouter);
 
 app.get("/api/products", (req, res) => {
   console.log("Hello from products");
