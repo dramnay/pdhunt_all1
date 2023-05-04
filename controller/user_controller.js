@@ -1,7 +1,7 @@
 const User = require("../model/user");
 const userService = require("../service/user_service");
 
-const createUser = async (req, res) => {
+exports.createUser = async (req, res) => {
   try {
     const { name, email, password } = req.body;
     let user = new User({ name, email, password });
@@ -14,5 +14,3 @@ const createUser = async (req, res) => {
     res.status(400).send({ message: error.message });
   }
 };
-
-module.exports = { createUser };
