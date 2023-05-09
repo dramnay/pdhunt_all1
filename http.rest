@@ -14,10 +14,11 @@ GET http://localhost:3001/api/v1/notes
 
 POST http://localhost:3001/api/user
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDU4ZWIxZjVhM2M5ODAzY2ZlMDgxYjYiLCJuYW1lIjoiQW5tb2wyIiwiaWF0IjoxNjgzNTUzMDI1LCJleHAiOjE2ODM1NTY2MjV9.tLlcWEzkOB0No7zqzPCOhMZc8iYgi7zvXMPX2kvQIzY
 
 {
-    "email":"anmol@gmail.com",
-    "token": "1234567"
+    "email":"anmol@gmail.com"
+    
 
 }
 ###
@@ -36,12 +37,12 @@ content-type: application/json
 
 
 ###
-POST http://localhost:3001/api/auth/register
+POST http://localhost:3001/api/auth/signup
 content-type: application/json
 
 {
-    "name": "Anmol",
-    "email":"anmol@gmail.com",
+    "name": "Anmol3",
+    "email":"anmol3@gmail.com",
     "password": "password@123"
 
 }
@@ -53,7 +54,13 @@ content-type: application/json
 
 {
     
-    "email":"db111211@gmail.com",
-    "password": "123456"
+    "email":"anmol2@gmail.com",
+    "password": "password@123"
 
 }
+
+
+###
+POST http://localhost:3001/api/auth/logout
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDU4ZWIxZjVhM2M5ODAzY2ZlMDgxYjYiLCJuYW1lIjoiQW5tb2wyIiwiaWF0IjoxNjgzNTUzMDI1LCJleHAiOjE2ODM1NTY2MjV9.tLlcWEzkOB0No7zqzPCOhMZc8iYgi7zvXMPX2kvQIzY
