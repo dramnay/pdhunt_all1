@@ -37,17 +37,37 @@ content-type: application/json
 
 
 ###
-POST http://localhost:3001/api/auth/signup
+POST http://localhost:5001/api/auth/signup
 content-type: application/json
 
 {
-    "name": "Anmol3",
-    "email":"anmol3@gmail.com",
-    "password": "password@123"
-
+    "name": "Anmol2",
+    "email":"anmol2@gmail.com",
+    "password": "password@123",
+    "number":1234567892
 }
 
 
+###
+POST http://localhost:5001/api/auth/signup/verifyOtp
+content-type: application/json
+
+{
+    "number":1234567892,
+    "name": "Anmol2",
+    "email":"anmol2@gmail.com",
+    "password": "password@123",
+    "otp":"tfnltq"
+}
+
+###
+POST http://localhost:5001/api/auth/signup/verifyOtp
+content-type: application/json
+
+{
+    "number":1234567891,
+    "otp":"57c7g9"
+}
 ###
 POST http://localhost:3001/api/auth/login
 content-type: application/json
