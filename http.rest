@@ -1,86 +1,74 @@
+@baseUrl= http://localhost:3001/api
 
-GET http://localhost:3001/
-###
-
-GET http://localhost:3001/api/products
-
-
-###
-
-
-GET http://localhost:3001/api/v1/notes
+@token= eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDVjNzg1NzZhMGIzNTM5MDE3NzZlYTAiLCJuYW1lIjoibW9udHkiLCJpYXQiOjE2ODM3ODQ1ODAsImV4cCI6MTY4Mzc4ODE4MH0.HPBdMBJ1T0g3avry7sBXDAGmofriuRkWVwtxRsF4KkE
 
 ###
 
 POST http://localhost:3001/api/user
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDU4ZWIxZjVhM2M5ODAzY2ZlMDgxYjYiLCJuYW1lIjoiQW5tb2wyIiwiaWF0IjoxNjgzNTUzMDI1LCJleHAiOjE2ODM1NTY2MjV9.tLlcWEzkOB0No7zqzPCOhMZc8iYgi7zvXMPX2kvQIzY
+Authorization: Bearer {{token}}
 
 {
-    "email":"anmol@gmail.com"
+    "email":"monty@gmail.com"
     
 
 }
-###
 
-POST https://pdhuntall1-production-8015.up.railway.app/api/user
+###
+POST {{baseUrl}}/auth/signup
 content-type: application/json
 
 {
-    "name": "DB2111",
-    "email":"db1112@gmail.com",
-    "password": "123456"
-
-}
-
-
-
-
-###
-POST http://localhost:5001/api/auth/signup
-content-type: application/json
-
-{
-    "name": "Anmol2",
-    "email":"anmol2@gmail.com",
+    "name": "vs",
+    "email":"vs@gmail.com",
     "password": "password@123",
-    "number":1234567892
+    "number":1234567891
 }
 
 
 ###
-POST http://localhost:5001/api/auth/signup/verifyOtp
+POST {{baseUrl}}/auth/verify
 content-type: application/json
 
 {
-    "number":1234567892,
-    "name": "Anmol2",
-    "email":"anmol2@gmail.com",
-    "password": "password@123",
-    "otp":"tfnltq"
+    "number":1234567893,
+    "otp":"348011"
 }
 
 ###
-POST http://localhost:5001/api/auth/signup/verifyOtp
-content-type: application/json
-
-{
-    "number":1234567891,
-    "otp":"57c7g9"
-}
-###
-POST http://localhost:3001/api/auth/login
+POST {{baseUrl}}/auth/login
 content-type: application/json
 
 {
     
-    "email":"anmol2@gmail.com",
+    "email":"monty@gmail.com",
     "password": "password@123"
 
 }
 
 
 ###
-POST http://localhost:3001/api/auth/logout
+POST {{baseUrl}}/auth/logout
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDU4ZWIxZjVhM2M5ODAzY2ZlMDgxYjYiLCJuYW1lIjoiQW5tb2wyIiwiaWF0IjoxNjgzNTUzMDI1LCJleHAiOjE2ODM1NTY2MjV9.tLlcWEzkOB0No7zqzPCOhMZc8iYgi7zvXMPX2kvQIzY
+Authorization: Bearer {{token}}
+
+
+//////////////////////tag requests //////////////////////////////////////////
+###
+POST {{baseUrl}}/tag 
+content-type: application/json 
+Authorization: Bearer {{token}}
+
+{
+"name":"Artificial Intelligence"
+}
+
+### 
+GET {{baseUrl}}/tag 
+content-type: application/json
+Authorization: Bearer {{token}}
+
+### 
+GET {{baseUrl}}/tag/645a45ad29205a5ac0046864 
+content-type: application/json 
+Authorization: Bearer {{token}}

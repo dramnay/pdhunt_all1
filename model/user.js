@@ -12,6 +12,7 @@ const userSchema = new mongoose.Schema({
     number: {
         type: String,
         required: true,
+        unique: true,
     },
 
     password: {
@@ -25,6 +26,11 @@ const userSchema = new mongoose.Schema({
         maxlength: 200,
         required: true,
         unique: true,
+    },
+
+    isActive: {
+        type: Boolean,
+        default: false,
     },
 
     token: {

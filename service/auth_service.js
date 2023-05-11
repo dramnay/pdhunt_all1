@@ -2,7 +2,7 @@ const User = require("../model/user");
 const Otp = require("../model/otp");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const otpGenerator = require("otp-generator");
+require("otp-generator");
 
 exports.signup = async(name, email, password, number, otp) => {
     console.log("In Auth SignUp  ");
@@ -87,6 +87,6 @@ exports.verify = async(number, otp) => {
         throw new Error("Invalid OTP");
     }
 
-    await User.updateOne({ number }, { isVerified: true });
+    await User.updateOne({ number }, { isActive: true });
     await Otp.deleteOne({ number });
 };
